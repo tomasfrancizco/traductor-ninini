@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-  <script type="text/javascript">
-    
-    function ninini(e){
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Traductor Ni Ni Ni</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div>
+        <input
+          type="text"
+          placeholder="Escribe..."
+          style="width: 250px;"
+          id="input"
+        />
+        <button type="button" onclick="ninini()">Traduce</button>
+      </div>
+      <p id="output"></p>
+      <br />
+      <div style="height: 160px;">
+        <img
+          src="https://media.tenor.com/images/fc5e58985f42535bba9f910e2d65adfd/raw"
+          alt="ninini"
+          style="height: 160px; width: 200px; display: none;"
+          id="imagen"
+        />
+      </div>
+    </div>
 
-      return document.getElementById("texto").innerHTML = `"${e.target.value.replace(/[aeou]/gi, "i")}"`
-    }
+    <script type="text/javascript">
+      const input = document.getElementById("input");
+      const output = document.getElementById("output");
+      const imagen = document.getElementById("imagen");
 
-    function showImage(){
-      return document.getElementById("imagen").setAttribute("style", "width: 200px")
-    }
-  </script>
-</head>
-<body>
-      <input type="text" placeholder="Escribe..." onchange="ninini(event)" style="width: 200px;">
-      <input type="button" value="Traduce" onclick="showImage()">
-  <p id="texto"></p> <br>
-  <img src="https://media.tenor.com/images/fc5e58985f42535bba9f910e2d65adfd/raw" alt="ninini" style="width: 200px; display: none" id="imagen">
-</body>
+      const ninini = () => {
+        output.innerHTML = `"${input.value.replace(/[aeou]/gi, "i")}"`;
+        imagen.style = "height: 160px; width: 200px; display: block";
+        input.value = "";
+      };
+    </script>
+  </body>
 </html>
