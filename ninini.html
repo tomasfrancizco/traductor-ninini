@@ -8,18 +8,18 @@
     <title>Traductor Ni Ni Ni</title>
   </head>
   <body>
-    <div class="main-container">
+    <div class="main-container shadow">
       <div>
         <input
           type="text"
           placeholder="Escribe..."
           style="width: 250px;"
           id="input"
+          class="shadow"
         />
-        <button type="button" onclick="ninini()">Traduce</button>
+        <button type="button" onclick="ninini()" class="shadow">Traduce</button>
       </div>
       <p id="output"></p>
-      <br />
       <div style="height: 160px;">
         <img
           src="https://media.tenor.com/images/fc5e58985f42535bba9f910e2d65adfd/raw"
@@ -36,9 +36,11 @@
       const imagen = document.getElementById("imagen");
 
       const ninini = () => {
-        output.innerHTML = `"${input.value.replace(/[aeou]/gi, "i")}"`;
-        imagen.style = "height: 160px; width: 200px; display: block";
-        input.value = "";
+        if (input.value) {
+          output.innerHTML = `"${input.value.replace(/[aeou]/gi, "i")}"`;
+          imagen.style = "height: 160px; width: 200px; display: block";
+          input.value = "";
+        }
       };
     </script>
   </body>
