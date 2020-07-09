@@ -12,8 +12,8 @@ body {
 }
 
 .shadow {
-  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.5),
-  -3px -3px 8px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 12px 0 rgba(0, 0, 0, 0.5),
+  -5px -5px 12px 0 rgba(255, 255, 255, 0.5);
 }
 
 .main-container {
@@ -31,6 +31,10 @@ body {
   border: 0;
   height: 20px;
   padding: 5px;
+}
+
+#input:focus {
+  outline: 0;
 }
 
 button {

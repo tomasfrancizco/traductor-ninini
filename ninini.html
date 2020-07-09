@@ -16,8 +16,8 @@
           style="width: 250px;"
           id="input"
           class="shadow"
+          oninput="ninini()"
         />
-        <button type="button" onclick="ninini()" class="shadow">Traduce</button>
       </div>
       <p id="output"></p>
       <div style="height: 160px;">
@@ -39,7 +39,9 @@
         if (input.value) {
           output.innerHTML = `"${input.value.replace(/[aeou]/gi, "i")}"`;
           imagen.style = "height: 160px; width: 200px; display: block";
-          input.value = "";
+        } else {
+          output.innerHTML = "";
+          imagen.style = "height: 160px; width: 200px; display: none;";
         }
       };
     </script>
